@@ -23,6 +23,7 @@ import sys
 
 sys.path.insert(0, ".")
 import tensorflow as tf
+# import tensorflow.compat.v1 as tf
 import os
 import argparse
 from tensorflow.python.framework import graph_util
@@ -139,7 +140,7 @@ def main(_):
             converter = tf.lite.TFLiteConverter.from_frozen_graph(
                 frozen_graph_path, params["input_nodes"], params["output_nodes"]
             )
-            tflite_model = converter.convert()
+            tflite_modeimport tensorflow.compat.v1 as tfl = converter.convert()
             optimized_tflite_path = os.path.join(
                 params["output"], params["optimized_tflite_name"]
             )
@@ -158,7 +159,7 @@ def main(_):
         minimum_ios_deployment_target="12",
         image_scale=1 / 255.0,
     )
-
+import tensorflow.compat.v1 as tf
     print("=> setting up input and output of coreml model")
     # NOTE: at this point, outputs are MultiArray objects. Instead,
     # we have to convert them as GRAYSCALE image

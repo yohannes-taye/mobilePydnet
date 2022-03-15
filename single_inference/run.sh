@@ -15,5 +15,7 @@
 #!bin/bash
 set -e
 
-
-python inference.py --ckpt "ckpt/pydnet" --img "test"
+rm -rf ./results
+# python inference.py --ckpt "ckpt/pydnet" --img "test" --original_size
+python inference.py --ckpt "ckpt/pydnet" --img "/home/tmc/Documents/Data/tulagu/1MOV" --original_size
+# /home/tmc/Documents/Data/tulagu/1MOV

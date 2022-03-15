@@ -105,3 +105,4 @@ venv.bak/
 */Android/app/build/*
 ckpt/*
 frozen_models/*
+single_inference/results/*

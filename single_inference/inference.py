@@ -14,6 +14,8 @@
 
 
 import tensorflow as tf
+# import tensorflow.compat.v1 as tf
+
 import cv2
 import numpy as np
 import os
@@ -64,7 +66,7 @@ def main(_):
     if os.path.isfile(opts.img):
         img_list = [opts.img]
     elif os.path.isdir(opts.img):
-        img_list = glob.glob(os.path.join(opts.img, "*.{}".format("png")))
+        img_list = glob.glob(os.path.join(opts.img, "*.{}".format("jpg")))
         img_list = sorted(img_list)
         if len(img_list) == 0:
             raise ValueError("No {} images found in folder {}".format(".png", opts.img))
